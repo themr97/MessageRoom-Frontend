@@ -1,0 +1,18 @@
+.form {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.register-fields {
+    display: flex;
+    width: 480px;
+    flex-direction: column;
+}
+
+.register-fields>div {
+    margin-bottom: 20px;
+}

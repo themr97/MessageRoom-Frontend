@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import './style.css'
 import { TextField, Button } from '@material-ui/core'
 import { apiCall } from '../../utility'
+import { useHistory } from 'react-router-dom'
 
 const Login = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+
+    const history = useHistory()
+
     const loginUser = async () => {
         const res = await apiCall('/api/login', {username , password})
         console.log(res);
@@ -14,7 +18,8 @@ const Login = () => {
 
             // TODO:
             localStorage.setItem('token', res.data);
-            alert("You are logged in");
+             alert("You are logged in");
+             history.push('/chat');
         } else {
             alert(res.error);
         }
